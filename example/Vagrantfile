@@ -1,0 +1,12 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  3.times do |count|
+    config.vm.define "core-redis-#{count}" do |hab|
+			hab.vm.box = "core-redis"
+			hab.vm.synced_folder '.', '/vagrant', disabled: true
+      hab.vm.network "private_network", ip: "192.168.100.#{100+count}"
+    end
+  end
+end

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/bin/hab sup load smacfarlane/openssh --force
+
